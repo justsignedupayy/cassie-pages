@@ -34,11 +34,172 @@
 .hero {
 	color: #ffffff;
 	text-align: center;
-	background: linear-gradient(to bottom, $middle-gradient-color 0%, $secondary-brand-color 100%) no-repeat #a05fb7;
-	padding-top: 50px;
+	background: linear-gradient(135deg, $dark-bg 0%, $darker-bg 50%, darken($brand-color, 40%) 100%);
+	padding: 140px 0 120px 0;
+	position: relative;
+	overflow: hidden;
+	min-height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media #{$tablet} {
+		padding: 160px 0 140px 0;
+	}
+	
+	@media #{$desktop} {
+		padding: 180px 0 160px 0;
+		min-height: 100vh;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: 
+			radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+			radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	#particles-canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		opacity: 0.6;
+	}
+
+	.dna-container {
+		position: absolute;
+		right: 5%;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 250px;
+		height: 400px;
+		z-index: 2;
+		opacity: 0.9;
+		display: none;
+		
+		@media #{$tablet} {
+			display: block;
+			width: 300px;
+			height: 500px;
+		}
+		
+		@media #{$desktop} {
+			width: 400px;
+			height: 600px;
+			right: 8%;
+		}
+		
+		#dna-canvas {
+			width: 100%;
+			height: 100%;
+			cursor: grab;
+			display: block;
+			background: transparent;
+			
+			canvas {
+				display: block;
+				width: 100% !important;
+				height: 100% !important;
+			}
+			
+			&:active {
+				cursor: grabbing;
+			}
+			
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	.text-container {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 0 24px;
+		position: relative;
+		z-index: 3;
+		
+		@media #{$tablet} {
+			padding: 0 32px;
+		}
+		
+		@media #{$desktop} {
+			padding: 0 40px;
+		}
+	}
+
+	h1 {
+		font-size: 4.5em;
+		font-weight: 800;
+		margin-bottom: 32px;
+		letter-spacing: -0.04em;
+		position: relative;
+		color: #ffffff;
+		font-family: 'Space Grotesk', sans-serif;
+		line-height: 1.1;
+		text-shadow: 0 4px 30px rgba(14, 165, 233, 0.3);
+		animation: fadeInUp 0.8s ease-out;
+		
+		@media #{$tablet} {
+			font-size: 5.5em;
+		}
+		
+		@media #{$desktop} {
+			font-size: 6.5em;
+		}
+		
+		.gradient-text {
+			background: linear-gradient(135deg, $brand-color 0%, $secondary-brand-color 50%, $accent-color 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+	}
+
+	.subtext {
+		font-size: 1.3em;
+		font-weight: 400;
+		line-height: 1.8;
+		max-width: 700px;
+		margin: 0 auto 48px;
+		color: rgba(255, 255, 255, 0.9);
+		position: relative;
+		animation: fadeInUp 0.8s ease-out 0.2s both;
+		
+		@media #{$tablet} {
+			font-size: 1.5em;
+		}
+	}
 
 	p {
-		color: #fff;
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	.cta {
+		position: relative;
+		margin-top: 0;
+		animation: fadeInUp 0.8s ease-out 0.4s both;
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 

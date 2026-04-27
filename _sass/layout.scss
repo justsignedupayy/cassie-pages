@@ -1,15 +1,23 @@
 .container, .text-container {
 	margin: 0 auto;
 	position: relative;
-	padding: 0 20px;
+	padding: 0 24px;
+	
+	@media #{$tablet} {
+		padding: 0 32px;
+	}
+	
+	@media #{$desktop} {
+		padding: 0 40px;
+	}
 }
 
 .text-container {
-	max-width: 750px;
+	max-width: 800px;
 }
 
 .container {
-	max-width: 1140px;
+	max-width: 1200px;
 
 	&.max-container {
 		max-width: 100%;
@@ -20,42 +28,82 @@
 header {
 	color: #fff;
 	padding: 20px 0;
-	background: $brand-color; /* Old browsers */
-	background: linear-gradient(to bottom, $brand-color 0%, $middle-gradient-color 100%) no-repeat $brand-color;
+	background: rgba(10, 14, 39, 0.8);
+	backdrop-filter: blur(20px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
 	a {
-		color: #fff;
+		color: rgba(255, 255, 255, 0.9);
 		text-decoration: none;
 		z-index: 1;
 		position: relative;
+		transition: all 0.3s ease;
+		font-weight: 500;
 
 		&:hover {
 			text-decoration: none;
+			color: $brand-color;
 		}
 	}
 
 	.company-name {
-        font-size: 1.7em;
-        // line-height: 0; /* No longer needed for text */
-        min-height: 33px;   /* <-- ADD: Forces the height to match the old logo */
-        display: flex;      /* <-- ADD: To allow vertical alignment */
-        align-items: center;/* <-- ADD: To center the "Cassie" text vertically */
+		font-size: 1.6em;
+		font-weight: 800;
+		font-family: 'Space Grotesk', sans-serif;
+		min-height: 36px;
+		display: flex;
+		align-items: center;
+		letter-spacing: -0.02em;
 
-        a {
-            display: inline-block;
-        }
+		a {
+			display: inline-block;
+			color: #fff;
+			background: linear-gradient(135deg, $brand-color, $secondary-brand-color);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
 
-        img {
-            display: block;
-            width: auto;
-        }
-    }
+		img {
+			display: block;
+			width: auto;
+		}
+	}
 }
 
 .content {
-	background: #fff;
-	padding: 1px 0 0 0;
+	background: $light-bg;
+	padding: 0;
 	position: relative;
+
+	section {
+		padding: 100px 0;
+		position: relative;
+		
+		@media #{$tablet} {
+			padding: 120px 0;
+		}
+		
+		@media #{$desktop} {
+			padding: 140px 0;
+		}
+		
+		&:nth-child(even) {
+			background: linear-gradient(180deg, $light-bg 0%, $card-bg 100%);
+		}
+		
+		&:nth-child(odd) {
+			background: $light-bg;
+		}
+	}
 }
 
 .screenshot{
@@ -72,12 +120,15 @@ header {
 }
 
 section {
-	padding: 100px 0;
-}
+	padding: 80px 0;
 
-
-section + section {
-	padding-top: 0;
+	@media #{$tablet} {
+		padding: 100px 0;
+	}
+	
+	@media #{$desktop} {
+		padding: 120px 0;
+	}
 }
 
 .subtext {
@@ -143,7 +194,16 @@ blockquote:before {
 
 .page {
 	margin-bottom: 0;
-	padding-bottom: 80px;
+	padding-bottom: 0;
+	
+	.container {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	
+	h2 {
+		margin-top: 0;
+	}
 }
 
 .center-text {
@@ -181,27 +241,74 @@ blockquote:before {
 // New Footer Styles (Final)
 */
 .footer-container {
-  padding: 40px 0;
+  padding: 60px 0;
   display: flex;
   flex-direction: column;
-  align-items: center; // Centers the nav and p blocks
+  align-items: center;
+  background: linear-gradient(180deg, $dark-bg 0%, $darker-bg 100%);
+  color: #fff;
+  margin-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
 
   .footer-nav {
-    text-align: center; // Centers the links
-    width: 100%;        // Ensures this block is full-width
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
 
     a {
-      // 'display: block;' is removed, so they go side-by-side
-      padding: 0 10px;   // Add horizontal space between links
-      color: #555;
+      padding: 0 16px;
+      color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      font-size: 0.95em;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 60%;
+        height: 2px;
+        background: linear-gradient(90deg, $brand-color, $accent-color);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        color: #fff;
+        
+        &::after {
+          transform: translateX(-50%) scaleX(1);
+        }
+      }
     }
   }
 
   .copyright {
-    margin-top: 30px; // Increased space (was 20px)
-    color: #888;
-    text-align: center; // Centers the copyright text
-    width: 100%;        // Ensures this block is full-width
+    margin-top: 32px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    width: 100%;
+    font-size: 0.9em;
+    position: relative;
+    z-index: 1;
   }
 }

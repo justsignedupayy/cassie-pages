@@ -1,9 +1,20 @@
 ---
-title: Our team
+title: Our Team
 ---
 
-<p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_staff_members/" class="btn"><strong>&#9998;</strong> Manage Staff members</a></p>
-<ul class="staff">
+<div class="content">
+	<section>
+		<div class="container">
+			<div class="text editable" style="margin-bottom: 48px;">
+				<h2>Our Team</h2>
+				<p style="margin-bottom: 0;">Meet the talented team behind CASSIE. We're a group of passionate developers working together to create innovative solutions for genomic data analysis.</p>
+			</div>
+		</div>
+	</section>
+	
+	<section style="padding-top: 0;">
+		<div class="container">
+			<ul class="staff">
 	{% for person in site.staff_members %}
 		<li>
 			<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
@@ -11,4 +22,7 @@ title: Our team
 			<div class="position">{{ person.position }}</div>
 		</li>
 	{% endfor %}
-</ul>
+			</ul>
+		</div>
+	</section>
+</div>

@@ -1,6 +1,20 @@
-$brand-color: #4182e4;
-$secondary-brand-color: #4182e4;
-$middle-gradient-color: mix($brand-color, $secondary-brand-color, 95%);
+// Startup Aesthetic - Vibrant & Modern
+$brand-color: #0ea5e9; // Bright cyan
+$secondary-brand-color: #8b5cf6; // Vibrant purple
+$accent-color: #10b981; // Fresh green
+$warning-color: #f59e0b; // Energetic amber
+$middle-gradient-color: mix($brand-color, $secondary-brand-color, 50%);
+
+// Dark Modern Theme
+$dark-bg: #0a0e27; // Deep dark blue
+$darker-bg: #050714; // Almost black
+$light-bg: #ffffff; // Pure white
+$card-bg: #f8fafc; // Very light gray
+$text-primary: #0f172a;
+$text-secondary: #64748b;
+$text-muted: #94a3b8;
+$border-color: #e2e8f0;
+$border-light: #e2e8f0;
 
 // Breakpoints
 $tablet: "(min-width: 450px)";

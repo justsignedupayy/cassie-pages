@@ -1,6 +1,6 @@
 ---
 name: Ege Sirvan
 position: Project Lead
-image_path: /images/default-avatar.png
+image_path: /github_pps/ege_github_pp.png
 github: EgeSrvn
 ---

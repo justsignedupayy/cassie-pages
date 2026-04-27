@@ -1,8 +1,12 @@
-- name: Reports&Documentation
+- name: Home
+  link: /
+  new_window: false
+  highlight: false
+- name: Documentation
   link: /reports/
   new_window: false
   highlight: false
-- name: Staff
+- name: Team
   link: /staff/
   new_window: false
   highlight: false

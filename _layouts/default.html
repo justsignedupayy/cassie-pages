@@ -8,8 +8,15 @@
 		{% seo %}
 		{% feed_meta %}
 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
 		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+		<script src="{{ site.baseurl }}/js/particles.js" defer></script>
+		<script src="{{ site.baseurl }}/js/dna-helix-3d.js" defer></script>
+		<script src="{{ site.baseurl }}/js/scroll-animations.js" defer></script>
 
 		{% if jekyll.environment == 'production' and site.google_analytics_key and site.google_analytics_key != '' %}
 			<script>

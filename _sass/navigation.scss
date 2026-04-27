@@ -1,5 +1,5 @@
 .nav-open nav {
-	border-bottom: 1px dotted rgba(255, 255, 255, .2);
+	border-bottom: 1px solid $border-color;
 	padding: 10px 0;
 	a {
 		display: block;
@@ -30,18 +30,32 @@ nav {
 
 
 	a {
-		margin: 0 3px;
-		padding: 20px 10px;
-		border-bottom: 1px solid rgba(255,255,255,0);
-		color: rgba(255,255,255,.8);
-		transition: .2s ease-in-out;
+		margin: 0 4px;
+		padding: 10px 16px;
+		border-radius: 8px;
+		color: rgba(255, 255, 255, 0.8);
+		transition: all 0.3s ease;
 		display: none;
+		font-size: 0.9em;
+		font-weight: 500;
+		position: relative;
 
 		@media #{$mid-point} {
 			display: inline;
-			padding: 10px;
+			padding: 10px 16px;
 		}
 
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 6px;
+			left: 50%;
+			transform: translateX(-50%) scaleX(0);
+			width: 60%;
+			height: 2px;
+			background: linear-gradient(90deg, $brand-color, $accent-color);
+			transition: transform 0.3s ease;
+		}
 
 		&.nav-toggle {
 			display: inline;
@@ -50,6 +64,7 @@ nav {
 			top: -22px;
 			font-size: 1.9em;
 			border: 0;
+			color: #fff;
 
 			@media #{$mid-point} {
 				display: none;
@@ -57,14 +72,18 @@ nav {
 
 			&:hover {
 				border: 0;
+				color: $brand-color;
 			}
 		}
 	}
 
 	a:hover {
-
-		border-bottom: 1px solid rgba(255,255,255,.3);
 		color: #fff;
+		background: rgba(255, 255, 255, 0.1);
+		
+		&::after {
+			transform: translateX(-50%) scaleX(1);
+		}
 	}
 
 	@media #{$mid-point} {
@@ -81,6 +100,11 @@ nav {
 
 	a.active {
 		color: #fff;
+		background: rgba(14, 165, 233, 0.2);
+		
+		&::after {
+			transform: translateX(-50%) scaleX(1);
+		}
 	}
 
 }

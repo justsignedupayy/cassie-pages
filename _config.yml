@@ -2,14 +2,14 @@
 # Site
 
 title: Cassie
-url: "https://justsignedupayy.github.io/cassie-pages/"
-baseurl: "/cassie-pages"
+url: "https://emrecanyologlu.github.io"
+baseurl: "/cassie-website"
 google_analytics_key: ""
 google_maps_javascript_api_key: ""
 disqus_shortname: ""
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
-logo: /siteicon.png
+logo: siteicon.png
 description: Cloud-based genome assembly and annotation platform that streamlines and automates every stage of genomic data analysis.
 author:
   name: osman
