@@ -113,4 +113,29 @@
 		margin-top: 8px;
 		font-weight: 500;
 	}
+
+	.bio {
+		color: $text-secondary;
+		font-size: 0.85em;
+		line-height: 1.6;
+		margin-top: 12px;
+		margin-bottom: 0;
+		font-style: italic;
+		opacity: 0.9;
+	}
+
+	.staff-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+	}
+
+	.staff-info {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+	}
 }

@@ -1,13 +1,14 @@
 ---
-title: Our Team
+layout: page
 ---
 
 <div class="content">
 	<section>
 		<div class="container">
 			<div class="text editable" style="margin-bottom: 48px;">
-				<h2>Our Team</h2>
-				<p style="margin-bottom: 0;">Meet the talented team behind CASSIE. We're a group of passionate developers working together to create innovative solutions for genomic data analysis.</p>
+				<h2>Meet Our Team</h2>
+				<p style="margin-bottom: 12px;">We're a group of passionate developers and innovators working together to create cutting-edge solutions for genomic data analysis. Each team member brings unique expertise and dedication to advancing the CASSIE project.</p>
+				<p style="margin-bottom: 0;"><strong><a href="{{ site.url }}{{ site.baseurl }}" target="_self">Visit our website</a></strong> to learn more about our work and mission.</p>
 			</div>
 		</div>
 	</section>
@@ -17,9 +18,14 @@ title: Our Team
 			<ul class="staff">
 	{% for person in site.staff_members %}
 		<li>
-			<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
-            <div class="name"><a target="_blank" href="https://github.com/{{ person.github }}">{{ person.name }}</a></div>
-			<div class="position">{{ person.position }}</div>
+			<div class="staff-card">
+				<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
+				<div class="staff-info">
+					<div class="name"><a target="_blank" href="{{ person.linkedin }}">{{ person.name }}</a></div>
+					<div class="position">{{ person.position }}</div>
+					{% if person.bio %}<p class="bio">{{ person.bio }}</p>{% endif %}
+				</div>
+			</div>
 		</li>
 	{% endfor %}
 			</ul>
