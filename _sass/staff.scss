@@ -164,3 +164,21 @@
 .team-list-section {
 	padding: 52px 0 104px;
 }
+
+@media (max-width: 767px) {
+	.team-hero {
+		padding: 52px 0 30px;
+	}
+
+	.team-list-section {
+		padding: 34px 0 70px;
+	}
+
+	.staff {
+		gap: 18px;
+
+		li {
+			padding: 22px;
+		}
+	}
+}

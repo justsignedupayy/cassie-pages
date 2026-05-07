@@ -5,6 +5,11 @@
 		display: block;
 	}
 
+	a:not(.nav-toggle):not(.editor-link) {
+		margin: 6px 0;
+		text-align: center;
+	}
+
 	@media #{$mid-point} {
 		border: 0;
 		padding: 0 20px;
@@ -58,13 +63,24 @@ nav {
 		}
 
 		&.nav-toggle {
-			display: inline;
+			align-items: center;
+			display: inline-flex;
+			justify-content: center;
 			position: absolute;
 			right: 10px;
-			top: -22px;
+			top: 50%;
+			transform: translateY(-54%);
 			font-size: 1.9em;
 			border: 0;
 			color: #fff;
+			height: 42px;
+			line-height: 1;
+			padding: 0;
+			width: 42px;
+
+			&::after {
+				display: none;
+			}
 
 			@media #{$mid-point} {
 				display: none;
@@ -107,4 +123,15 @@ nav {
 		}
 	}
 
+}
+
+@media (max-width: 619px) {
+	nav {
+		padding-top: 8px;
+
+		a.nav-toggle {
+			right: 0;
+			top: 50%;
+		}
+	}
 }
