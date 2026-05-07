@@ -1,50 +1,78 @@
 ---
-layout: page
+layout: default
 title: Reports & Documentation
 ---
 
-<div class="content">
-	<section>
+<div class="reports-page">
+	<section class="reports-hero">
 		<div class="container">
-			<div class="text editable">
-				<p style="margin-bottom: 48px;">Here you can find all project-related documents and deliverables for CASSIE.</p>
-                
-                <h2 style="text-align: left;">Project Deliverables</h2>
-                <div class="deliverables-grid">
-                    <div class="deliverable-card">
-                        <div class="deliverable-icon">📄</div>
-                        <h4>Project Information Form</h4>
-                        <a href="{{'/deliverables/Project_Information_Form_CASSIE.pdf' | relative_url }}" target="_blank" class="deliverable-link">
-                            View PDF →
-                        </a>
-                    </div>
-                    <div class="deliverable-card">
-                        <div class="deliverable-icon">📋</div>
-                        <h4>Project Specification Document</h4>
-                        <a href="{{'/deliverables/T2522_Project_Specification_Document.pdf' | relative_url }}" target="_blank" class="deliverable-link">
-                            View PDF →
-                        </a>
-                    </div>
-                    <div class="deliverable-card">
-                        <div class="deliverable-icon">📊</div>
-                        <h4>Analysis and Requirements Report</h4>
-                        <a href="{{'/deliverables/T2522_Analysis_and_Requirements_Report.pdf' | relative_url }}" target="_blank" class="deliverable-link">
-                            View PDF →
-                        </a>
-                    </div>
-                    <div class="deliverable-card">
-                        <div class="deliverable-icon">📑</div>
-                        <h4>Final Report</h4>
-                        <a href="{{'/deliverables/T2522_Final_report.pdf' | relative_url }}" target="_blank" class="deliverable-link">
-                            View PDF →
-                        </a>
-                    </div>
-                </div>
-
-                <p style="margin-top: 48px; font-style: italic; color: #94a3b8; font-size: 0.95em;">
-                    All documents are available in PDF format. Click on any document to view or download.
-                </p>
+			<div class="reports-hero__content">
+				<p class="eyebrow">CASSIE Deliverables</p>
+				<h1>Project reports, specifications, and reference material.</h1>
+				<p>All official documents for the CASSIE senior design project are collected here as PDF deliverables.</p>
 			</div>
+			<div class="reports-hero__panel" aria-hidden="true">
+				<div class="reports-dna">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="reports-library">
+		<div class="container">
+			<div class="section-heading">
+				<p class="eyebrow">Documentation Library</p>
+				<h2>Project Deliverables</h2>
+			</div>
+			<div class="deliverables-grid reports-grid">
+				<div class="deliverable-card">
+					<div class="deliverable-icon">PIF</div>
+					<p class="deliverable-meta">Project setup</p>
+					<h4>Project Information Form</h4>
+					<a href="{{'/deliverables/Project_Information_Form_CASSIE.pdf' | relative_url }}" target="_blank" class="deliverable-link">
+						View PDF
+					</a>
+				</div>
+				<div class="deliverable-card">
+					<div class="deliverable-icon">PSD</div>
+					<p class="deliverable-meta">Specification</p>
+					<h4>Project Specification Document</h4>
+					<a href="{{'/deliverables/T2522_Project_Specification_Document.pdf' | relative_url }}" target="_blank" class="deliverable-link">
+						View PDF
+					</a>
+				</div>
+				<div class="deliverable-card">
+					<div class="deliverable-icon">ARR</div>
+					<p class="deliverable-meta">Requirements</p>
+					<h4>Analysis and Requirements Report</h4>
+					<a href="{{'/deliverables/T2522_Analysis_and_Requirements_Report.pdf' | relative_url }}" target="_blank" class="deliverable-link">
+						View PDF
+					</a>
+				</div>
+				<div class="deliverable-card">
+					<div class="deliverable-icon">DDR</div>
+					<p class="deliverable-meta">Detailed design</p>
+					<h4>Detailed Design Report</h4>
+					<a href="{{'/deliverables/T2522_Detailed_Design_Report-2.pdf' | relative_url }}" target="_blank" class="deliverable-link">
+						View PDF
+					</a>
+				</div>
+				<div class="deliverable-card">
+					<div class="deliverable-icon">FIN</div>
+					<p class="deliverable-meta">Final submission</p>
+					<h4>Final Report</h4>
+					<a href="{{'/deliverables/T2522_Final_report.pdf' | relative_url }}" target="_blank" class="deliverable-link">
+						View PDF
+					</a>
+				</div>
+			</div>
+			<p class="reports-note"></p>
 		</div>
 	</section>
 </div>

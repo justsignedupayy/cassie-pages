@@ -1,11 +1,11 @@
 ---
-layout: page
+layout: default
 ---
 
-<div class="content">
-	<section>
+<div class="team-page">
+	<section class="team-hero">
 		<div class="container">
-			<div class="text editable" style="margin-bottom: 48px;">
+			<div class="team-hero__copy">
 				<h2>Meet Our Team</h2>
 				<p style="margin-bottom: 12px;">We're a group of passionate developers and innovators working together to create cutting-edge solutions for genomic data analysis. Each team member brings unique expertise and dedication to advancing the CASSIE project.</p>
 				<p style="margin-bottom: 0;"><strong><a href="{{ site.url }}{{ site.baseurl }}" target="_self">Visit our website</a></strong> to learn more about our work and mission.</p>
@@ -13,7 +13,7 @@ layout: page
 		</div>
 	</section>
 	
-	<section style="padding-top: 0;">
+	<section class="team-list-section">
 		<div class="container">
 			<ul class="staff">
 	{% for person in site.staff_members %}

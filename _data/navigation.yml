@@ -2,6 +2,10 @@
   link: /
   new_window: false
   highlight: false
+- name: User Manual
+  link: /user-manual/
+  new_window: false
+  highlight: false
 - name: Documentation
   link: /reports/
   new_window: false

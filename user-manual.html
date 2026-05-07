@@ -1,0 +1,482 @@
+---
+layout: default
+title: User Manual
+permalink: /user-manual/
+---
+
+<div class="manual-page">
+	<div class="manual-intro">
+		<div>
+			<p class="manual-eyebrow">CASSIE USER MANUAL</p>
+			<h3>Cloud-Native Genomics Workflow Platform</h3>
+			<p>
+				This page is the web version of the original CASSIE user manual. It covers the full user workflow,
+				from account creation and storage uploads to pipeline publishing and troubleshooting.
+			</p>
+		</div>
+		<div class="manual-meta">
+			<div class="manual-meta-card">
+				<span class="manual-meta-label">Version</span>
+				<strong>1.0</strong>
+			</div>
+			<div class="manual-meta-card">
+				<span class="manual-meta-label">Format</span>
+				<strong>Web Manual</strong>
+			</div>
+			<div class="manual-meta-card">
+				<span class="manual-meta-label">Assets</span>
+				<strong>Integrated Screenshots</strong>
+			</div>
+		</div>
+	</div>
+
+	<div class="manual-toc">
+		<div class="manual-toc-group">
+			<p class="manual-toc-title">Foundations</p>
+			<a href="#introduction"><span>1</span>Introduction</a>
+			<a href="#getting-started"><span>2</span>Getting Started</a>
+			<a href="#storage"><span>3</span>Storage</a>
+		</div>
+		<div class="manual-toc-group">
+			<p class="manual-toc-title">Workflows</p>
+			<a href="#running-a-job"><span>4</span>Running a Job</a>
+			<a href="#pipeline-builder"><span>5</span>Pipeline Builder</a>
+			<a href="#community-library"><span>6</span>Community Library</a>
+			<a href="#community-forum"><span>7</span>Community Forum</a>
+			<a href="#profile-settings"><span>8</span>Profile & Account</a>
+		</div>
+		<div class="manual-toc-group">
+			<p class="manual-toc-title">Reference</p>
+			<a href="#admin-panel"><span>9</span>Admin Panel</a>
+			<a href="#supported-tools"><span>10</span>Supported Tools</a>
+			<a href="#tips-and-troubleshooting"><span>11</span>Troubleshooting</a>
+		</div>
+	</div>
+
+	<article id="introduction" class="manual-section">
+		<div class="manual-section-header">
+			<span class="manual-kicker">Section 1</span>
+			<h3>Introduction</h3>
+		</div>
+		<p>
+			CASSIE is a cloud-native platform for genomics workflows. It allows researchers to upload genomic data,
+			configure analyses through guided UI selections, translate user-defined settings into reproducible
+			Nextflow workflows, execute jobs on scalable Kubernetes infrastructure, and share successful workflows
+			with the community without manually managing servers or containers.
+		</p>
+	</article>
+
+	<article id="getting-started" class="manual-section">
+		<div class="manual-section-header">
+			<span class="manual-kicker">Section 2</span>
+			<h3>Getting Started</h3>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>2.1 Registering an Account</h4>
+			<ol class="manual-steps">
+				<li>Open CASSIE in your web browser.</li>
+				<li>Click "Register" or "Sign Up" on the landing page.</li>
+				<li>Fill in your name, email address, and choose a password.</li>
+				<li>Check your inbox for a verification email and click the confirmation link.</li>
+				<li>After verification, you will be redirected to the login page.</li>
+			</ol>
+			<figure class="manual-figure">
+				<img src="{{ '/screenshots/1.png' | relative_url }}" alt="CASSIE registration page" loading="lazy">
+				<figcaption>Registering a new account in CASSIE.</figcaption>
+			</figure>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>2.2 Logging In</h4>
+			<ol class="manual-steps">
+				<li>Go to the CASSIE login page.</li>
+				<li>Enter your registered email and password.</li>
+				<li>Click "Log In" to open the Home dashboard.</li>
+				<li>If you forget your password, use the "Forgot Password" link on the login page to request a reset email.</li>
+			</ol>
+			<figure class="manual-figure">
+				<img src="{{ '/screenshots/2.png' | relative_url }}" alt="CASSIE login page" loading="lazy">
+				<figcaption>Logging in to the platform.</figcaption>
+			</figure>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>2.3 Navigating the Interface</h4>
+			<p>
+				The main navigation bar runs across the top of the application. Depending on whether you are signed in,
+				you will typically see the following links and controls:
+			</p>
+			<ul class="manual-key-list">
+				<li><strong>Home:</strong> Your dashboard and main starting point.</li>
+				<li><strong>Jobs:</strong> History of all jobs you have run.</li>
+				<li><strong>Pipelines:</strong> Manage your saved workflows and starter templates.</li>
+				<li><strong>Storage:</strong> Manage uploaded inputs and generated outputs after signing in.</li>
+				<li><strong>Community:</strong> Browse shared pipelines published by other users.</li>
+				<li><strong>Forum:</strong> Read and create discussion threads.</li>
+				<li><strong>Balance:</strong> Review available and reserved funds for job execution.</li>
+				<li><strong>Account Menu:</strong> Open your profile and account actions.</li>
+			</ul>
+			<p>
+				The Home page also provides shortcut cards for viewing jobs, opening pipelines, creating a job, and
+				launching the pipeline builder.
+			</p>
+			<figure class="manual-figure">
+				<img src="{{ '/screenshots/3.png' | relative_url }}" alt="CASSIE interface overview" loading="lazy">
+				<figcaption>Main CASSIE interface and navigation.</figcaption>
+			</figure>
+		</div>
+	</article>
+
+	<article id="storage" class="manual-section">
+		<div class="manual-section-header">
+			<span class="manual-kicker">Section 3</span>
+			<h3>Storage</h3>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>3.1 Uploading Files</h4>
+			<ol class="manual-steps">
+				<li>Click "Storage" in the navigation menu.</li>
+				<li>Select the Input Files tab if it is not already active.</li>
+				<li>Click "Upload from Computer" to choose local files, or use the Google Drive import option if it is configured.</li>
+				<li>Select one or more files from your computer.</li>
+				<li>Wait for the upload queue to finish and for the files to appear in the storage library.</li>
+				<li>Confirm that the uploaded file appears in your input file list.</li>
+			</ol>
+			<figure class="manual-figure">
+				<img src="{{ '/screenshots/4.png' | relative_url }}" alt="Uploading files in CASSIE storage" loading="lazy">
+				<figcaption>Uploading genomic files into Storage.</figcaption>
+			</figure>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>3.2 Supported File Formats</h4>
+			<p>CASSIE recognizes the following common genomic and workflow-related file formats:</p>
+			<ul class="manual-key-list">
+				<li><strong>FASTQ</strong> (<code>.fastq</code>, <code>.fq</code>, <code>.fastq.gz</code>): Short-read sequencing data.</li>
+				<li><strong>FASTA</strong> (<code>.fasta</code>, <code>.fa</code>, <code>.fna</code>): Reference sequences.</li>
+				<li><strong>GFF</strong> (<code>.gff</code>, <code>.gff3</code>): Genome annotations.</li>
+				<li><strong>Additional supported formats</strong> include <code>.gtf</code>, <code>.hal</code>, <code>.gfa</code>, <code>.csv</code>, <code>.tsv</code>, <code>.json</code>, and <code>.txt</code>, including supported compressed variants.</li>
+			</ul>
+			<p>
+				If CASSIE does not automatically detect a file format, you can set it manually using the override
+				format option next to the file.
+			</p>
+		</div>
+	</article>
+
+	<article id="running-a-job" class="manual-section">
+		<div class="manual-section-header">
+			<span class="manual-kicker">Section 4</span>
+			<h3>Running a Job</h3>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>4.1 Creating a One-off Job</h4>
+			<ol class="manual-steps">
+				<li>Open the Create Job flow from the Home page shortcut or from a pipeline action such as "Use in Job".</li>
+				<li>Select the desired bioinformatics tool from the tool dropdown.</li>
+				<li>Under input files, add the file or files required by the selected tool.</li>
+				<li>Review the estimated runtime and cost shown on the page.</li>
+				<li>Click "Submit Job" to queue the job for execution.</li>
+			</ol>
+			<div class="manual-gallery manual-gallery--triple">
+				<figure class="manual-figure">
+					<img src="{{ '/screenshots/6_1.png' | relative_url }}" alt="Creating a one-off job in CASSIE, first step" loading="lazy">
+					<figcaption>Starting a one-off job.</figcaption>
+				</figure>
+				<figure class="manual-figure">
+					<img src="{{ '/screenshots/6_2.png' | relative_url }}" alt="Creating a one-off job in CASSIE, second step" loading="lazy">
+					<figcaption>Selecting inputs and tool settings.</figcaption>
+				</figure>
+				<figure class="manual-figure">
+					<img src="{{ '/screenshots/6_3.png' | relative_url }}" alt="Creating a one-off job in CASSIE, final step" loading="lazy">
+					<figcaption>Reviewing the job before submission.</figcaption>
+				</figure>
+			</div>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>4.2 Configuring Tool Parameters</h4>
+			<p>
+				Most tools expose optional parameters below the file picker. Common examples include genome size,
+				coverage depth, or output format flags. Hover over parameter labels to view short descriptions.
+				Leave fields blank to use the default tool settings.
+			</p>
+			<figure class="manual-figure">
+				<img src="{{ '/screenshots/7.png' | relative_url }}" alt="Tool parameter configuration in CASSIE" loading="lazy">
+				<figcaption>Configuring optional tool parameters.</figcaption>
+			</figure>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>4.3 Monitoring Job Progress</h4>
+			<ol class="manual-steps">
+				<li>Open the "Jobs" page from the navigation menu.</li>
+				<li>Click a job row to open its detail view.</li>
+				<li>Review the current status, the stage-by-stage progress indicator, and the live log output.</li>
+				<li>If a job fails, review the error summary and use the retry option if available.</li>
+			</ol>
+			<figure class="manual-figure">
+				<img src="{{ '/screenshots/8.png' | relative_url }}" alt="Monitoring job progress in CASSIE" loading="lazy">
+				<figcaption>Tracking status and logs for a running job.</figcaption>
+			</figure>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>4.4 Downloading Results</h4>
+			<ol class="manual-steps">
+				<li>Once the job reaches Completed status, scroll to the outputs section.</li>
+				<li>Download files one by one or use the "Download All" option to retrieve everything as a ZIP archive.</li>
+			</ol>
+			<figure class="manual-figure">
+				<img src="{{ '/screenshots/9.png' | relative_url }}" alt="Downloading job results in CASSIE" loading="lazy">
+				<figcaption>Downloading generated outputs from a completed job.</figcaption>
+			</figure>
+		</div>
+	</article>
+
+	<article id="pipeline-builder" class="manual-section">
+		<div class="manual-section-header">
+			<span class="manual-kicker">Section 5</span>
+			<h3>Pipeline Builder</h3>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>5.1 Creating a New Pipeline</h4>
+			<ol class="manual-steps">
+				<li>Open the builder from the Home page shortcut or from the Pipelines page using "Create New Pipeline".</li>
+				<li>If no pipeline is open yet, start with a blank pipeline canvas.</li>
+				<li>Enter a name for the new pipeline when prompted.</li>
+			</ol>
+			<figure class="manual-figure">
+				<img src="{{ '/screenshots/10.png' | relative_url }}" alt="Creating a new pipeline in the CASSIE builder" loading="lazy">
+				<figcaption>Creating a new pipeline.</figcaption>
+			</figure>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>5.2 Adding and Connecting Nodes</h4>
+			<p>The builder canvas supports several node types:</p>
+			<ul class="manual-key-list">
+				<li><strong>Input:</strong> Represents an uploaded file from Storage.</li>
+				<li><strong>Tool:</strong> A bioinformatics processing step.</li>
+				<li><strong>Checkpoint:</strong> A pause point for manual review.</li>
+				<li><strong>Result:</strong> Marks the final output of the pipeline.</li>
+			</ul>
+			<p>
+				To build a pipeline, add an input node, place a tool node beside it, connect output handles to input
+				handles, continue linking tools in sequence, and finish with a result node.
+			</p>
+			<figure class="manual-figure">
+				<img src="{{ '/screenshots/11.png' | relative_url }}" alt="Connecting nodes in the CASSIE pipeline builder" loading="lazy">
+				<figcaption>Building and connecting pipeline nodes.</figcaption>
+			</figure>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>5.3 Saving and Naming Pipelines</h4>
+			<ol class="manual-steps">
+				<li>Click the Save button in the toolbar whenever you want to preserve your work.</li>
+				<li>Rename a pipeline by editing the title shown at the top of the builder.</li>
+				<li>Clone an existing pipeline through the pipeline menu if you want to reuse and modify it.</li>
+			</ol>
+			<figure class="manual-figure">
+				<img src="{{ '/screenshots/12.png' | relative_url }}" alt="Saving and renaming a pipeline in CASSIE" loading="lazy">
+				<figcaption>Saving and naming your pipeline.</figcaption>
+			</figure>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>5.4 Running a Pipeline Job</h4>
+			<ol class="manual-steps">
+				<li>Open an existing pipeline in the builder or from your Pipelines page.</li>
+				<li>Click "Run Pipeline".</li>
+				<li>Map each input node to a file from Storage.</li>
+				<li>Submit the pipeline run and verify that it appears in your Jobs list.</li>
+			</ol>
+			<figure class="manual-figure">
+				<img src="{{ '/screenshots/13.png' | relative_url }}" alt="Running a saved pipeline in CASSIE" loading="lazy">
+				<figcaption>Launching a pipeline job.</figcaption>
+			</figure>
+		</div>
+
+		<div class="manual-subsection">
+			<h4>5.5 Publishing a Pipeline to the Community</h4>
+			<ol class="manual-steps">
+				<li>Open the Pipelines page to see your saved pipelines.</li>
+				<li>Find the pipeline you want to share and use the Share action on its card.</li>
+				<li>After sharing, the pipeline is marked as Shared in your own pipeline list.</li>
+				<li>Open the Community page to confirm that the shared pipeline is visible to other users.</li>
+			</ol>
+			<div class="manual-gallery manual-gallery--double">
+				<figure class="manual-figure">
+					<img src="{{ '/screenshots/14_1.png' | relative_url }}" alt="Shared pipeline card in the CASSIE pipelines page" loading="lazy">
+					<figcaption>A pipeline marked as shared in your personal pipeline list.</figcaption>
+				</figure>
+				<figure class="manual-figure">
+					<img src="{{ '/screenshots/14_2.png' | relative_url }}" alt="Community page with shared pipelines in CASSIE" loading="lazy">
+					<figcaption>The Community page after shared pipelines become visible.</figcaption>
+				</figure>
+			</div>
+		</div>
+	</article>
+
+	<article id="community-library" class="manual-section">
+		<div class="manual-section-header">
+			<span class="manual-kicker">Section 6</span>
+			<h3>Community Library</h3>
+		</div>
+		<p>The Community page is where you browse workflows shared by other users.</p>
+		<p>
+			You can search by name, sort by most recent or most popular, filter by tool labels, open a shared
+			pipeline in the builder, and save a copy into your own account for later editing or execution.
+		</p>
+		<figure class="manual-figure">
+			<img src="{{ '/screenshots/15.png' | relative_url }}" alt="Pipelines browser in CASSIE" loading="lazy">
+			<figcaption>Browsing shared pipelines in the Community library.</figcaption>
+		</figure>
+	</article>
+
+	<article id="community-forum" class="manual-section">
+		<div class="manual-section-header">
+			<span class="manual-kicker">Section 7</span>
+			<h3>Community Forum</h3>
+		</div>
+		<p>The Forum is used to share results, discuss workflows, and ask questions.</p>
+		<ul class="manual-key-list">
+			<li>Browse posts on the main forum page.</li>
+			<li>Open a post to read details and replies.</li>
+			<li>Create a new post to start a discussion, share a pipeline, or report a result.</li>
+			<li>Use search to find posts by keyword or tag.</li>
+		</ul>
+		<figure class="manual-figure">
+			<img src="{{ '/screenshots/16.png' | relative_url }}" alt="Community forum in CASSIE" loading="lazy">
+			<figcaption>Forum browsing and discussion features.</figcaption>
+		</figure>
+	</article>
+
+	<article id="profile-settings" class="manual-section">
+		<div class="manual-section-header">
+			<span class="manual-kicker">Section 8</span>
+			<h3>Profile & Account Settings</h3>
+		</div>
+		<p>Use the Profile page to manage your public information, security settings, and account controls.</p>
+		<ul class="manual-key-list">
+			<li>View and edit your display name, email, bio, affiliation, job title, location, website, and avatar.</li>
+			<li>Enable or disable login verification and job notification emails after your email is verified.</li>
+			<li>Change your password separately from your public profile details.</li>
+			<li>Review pipelines you have shared to the community catalog.</li>
+			<li>Request and confirm account deletion with an emailed verification code.</li>
+		</ul>
+	</article>
+
+	<article id="admin-panel" class="manual-section">
+		<div class="manual-section-header">
+			<span class="manual-kicker">Section 9</span>
+			<h3>Admin Panel (Admin Users Only)</h3>
+		</div>
+		<p>
+			If your account has administrator privileges, you can access the dedicated admin console. The Admin Panel
+			provides access to operational controls such as:
+		</p>
+		<ul class="manual-key-list">
+			<li><strong>System Health:</strong> Server status, queue depth, and resource usage.</li>
+			<li><strong>User Management:</strong> Viewing, disabling, or promoting user accounts.</li>
+			<li><strong>Queue Monitor:</strong> Inspecting running and pending jobs across users and taking corrective actions when needed.</li>
+			<li><strong>Configuration:</strong> Reviewing administrative settings exposed in the console.</li>
+		</ul>
+		<figure class="manual-figure">
+			<img src="{{ '/screenshots/17.png' | relative_url }}" alt="CASSIE admin console overview" loading="lazy">
+			<figcaption>Overview of the CASSIE admin console.</figcaption>
+		</figure>
+	</article>
+
+	<article id="supported-tools" class="manual-section">
+		<div class="manual-section-header">
+			<span class="manual-kicker">Section 10</span>
+			<h3>Supported Bioinformatics Tools</h3>
+		</div>
+		<p>
+			CASSIE currently supports the following tools. Each tool displays its own required inputs and parameter
+			fields when selected.
+		</p>
+		<div class="manual-table-wrap">
+			<table class="manual-table">
+				<thead>
+					<tr>
+						<th>Tool</th>
+						<th>Purpose</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>FastQC</td><td>Read quality control and QC reports</td></tr>
+					<tr><td>GenomeScope2</td><td>Genome size and heterozygosity estimation</td></tr>
+					<tr><td>SPAdes</td><td>Short-read genome assembly</td></tr>
+					<tr><td>metaSPAdes</td><td>Metagenomic assembly</td></tr>
+					<tr><td>Hifiasm</td><td>HiFi long-read genome assembly</td></tr>
+					<tr><td>Verkko</td><td>Long-read telomere-to-telomere assembly</td></tr>
+					<tr><td>QUAST</td><td>Assembly quality assessment</td></tr>
+					<tr><td>BUSCO</td><td>Genome completeness evaluation</td></tr>
+					<tr><td>CAT</td><td>Taxonomic classification of contigs</td></tr>
+					<tr><td>Liftoff</td><td>Annotation liftover between assemblies</td></tr>
+					<tr><td>Meryl</td><td>K-mer database construction</td></tr>
+					<tr><td>Merqury</td><td>Reference-free assembly evaluation</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</article>
+
+	<article id="tips-and-troubleshooting" class="manual-section">
+		<div class="manual-section-header">
+			<span class="manual-kicker">Section 11</span>
+			<h3>Tips and Troubleshooting</h3>
+		</div>
+
+		<div class="manual-faq">
+			<div class="manual-faq-item">
+				<h4>Job stays queued for a long time</h4>
+				<p>
+					The compute cluster may be at capacity. Wait a few minutes and refresh the job detail page.
+					Administrators can also inspect queue status from the Admin Panel.
+				</p>
+			</div>
+			<div class="manual-faq-item">
+				<h4>File upload fails</h4>
+				<p>
+					Make sure the file is in a supported format and is not corrupted. Very large uploads may require
+					a more stable connection.
+				</p>
+			</div>
+			<div class="manual-faq-item">
+				<h4>Tool parameter errors</h4>
+				<p>
+					Review the tooltip text beside each parameter. Leaving a field blank usually applies the default value.
+				</p>
+			</div>
+			<div class="manual-faq-item">
+				<h4>Pipeline node will not connect</h4>
+				<p>
+					Connections are type-checked. Make sure you are dragging from the correct output handle to a compatible input handle.
+				</p>
+			</div>
+			<div class="manual-faq-item">
+				<h4>Published pipeline does not appear immediately</h4>
+				<p>
+					Refresh the Pipelines page and switch back to the Community tab after a short delay.
+				</p>
+			</div>
+		</div>
+
+		<div class="manual-callout">
+			<p>
+				For further help, post a question in the Community Forum or contact your system administrator.
+			</p>
+		</div>
+	</article>
+
+	<div class="manual-footer-link">
+		<a href="{{ '/reports/' | relative_url }}" class="button alt">Back to Documentation</a>
+	</div>
+</div>

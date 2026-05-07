@@ -1,19 +1,19 @@
-# CASSIE - Cloud-based Genome Assembly Platform
+# CASSIE - Cloud-Native Genomics Workflow Platform
 
-**CASSIE** (pronounced *kæsiː*) is a cloud-based genome assembly and annotation platform that streamlines and automates every stage of genomic data analysis.
+**CASSIE** is a cloud-native genomics workflow platform that replaces manual pipeline construction with guided UI selections.
 
 ## About
 
-CASSIE is a senior design project that provides researchers and bioinformaticians with powerful tools to assemble and annotate genomes efficiently. The platform combines modern web technologies with robust bioinformatics algorithms to deliver a comprehensive solution for genomic research.
+CASSIE helps researchers upload genomic data, configure workflows, estimate resource and cost requirements, and run reproducible analyses. User-defined configurations are translated into reproducible Nextflow workflows orchestrated on scalable Kubernetes infrastructure.
 
 ## Key Features
 
-- **Automated Workflows**: Streamlined processes that automate complex genomic analysis tasks
-- **Cloud-Based Infrastructure**: Scalable computing resources accessible from anywhere
-- **Comprehensive Assembly**: Advanced algorithms for accurate genome assembly
-- **Annotation Tools**: Integrated annotation capabilities for comprehensive genomic analysis
-- **User-Friendly Interface**: Intuitive design that makes complex operations accessible
-- **Collaborative Environment**: Share and collaborate on genomic projects seamlessly
+- **Data Upload**: Import genomic files from a computer or Google Drive
+- **Guided Workflow Setup**: Use the visual Pipeline Builder, community pipelines, manual tool selection, or smart suggestions
+- **Reproducible Workflows**: Translate user-defined configurations into Nextflow workflows
+- **Scalable Cloud Execution**: Run compute and memory intensive workloads on Kubernetes infrastructure
+- **Resource & Cost Estimation**: Estimate runtime and cost from input size, selected tools, and compute resources
+- **Community Pipelines and Discussions**: Share, reuse, and discuss successful workflows
 
 ## Project Structure
 

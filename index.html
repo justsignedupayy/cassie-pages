@@ -1,6 +1,6 @@
 ---
-title: CASSIE - Cloud-based Genome Assembly Platform
-description: Cloud-based genome assembly and annotation platform that streamlines and automates every stage of genomic data analysis.
+title: CASSIE - Cloud-Native Genomics Workflow Platform
+description: Cloud-native genomics workflow platform that translates guided configurations into reproducible Nextflow workflows on scalable Kubernetes infrastructure.
 ---
 <section class="hero">
     <canvas id="particles-canvas"></canvas>
@@ -8,8 +8,9 @@ description: Cloud-based genome assembly and annotation platform that streamline
         <div id="dna-canvas"></div>
     </div>
     <div class="text-container">
+        <p class="eyebrow">Cloud-native genomics workflow platform</p>
         <h1><span class="gradient-text">CASSIE</span></h1>
-        <p class="subtext">Cloud-based genome assembly and annotation platform that streamlines and automates every stage of genomic data analysis.</p>
+        <p class="subtext">Guided data upload, pipeline configuration, resource estimation, and reproducible cloud execution for genomics workflows.</p>
         <div class="cta">
             <a href="https://github.com/EgeSrvn/CASSIE" class="button hero-cta">View on GitHub</a>
             <a href="{{ site.baseurl }}/reports/" class="button alt hero-cta">Explore Docs</a>
@@ -17,70 +18,91 @@ description: Cloud-based genome assembly and annotation platform that streamline
     </div>
 </section>
 
-<div class="content">
-    <section>
+<div class="content home-page">
+    <section class="split-section">
         <div class="container">
-            <div class="text editable">
-                <h2>About CASSIE</h2>
-                <p style="font-size: 1.15em; line-height: 1.8;"><strong>CASSIE</strong> (pronounced <em>kæsiː</em>) is a comprehensive cloud-based platform designed to revolutionize genomic data analysis. Our platform provides researchers and bioinformaticians with powerful tools to assemble and annotate genomes efficiently, reducing the complexity and time required for genomic research.</p>
+            <div class="split-copy">
+                <h2 id="manual-title">About CASSIE</h2>
+                <p id="manual-copy" style="font-size: 1.15em; line-height: 1.8;"><strong>CASSIE</strong> is a cloud-native genomics workflow platform that replaces manual pipeline construction with guided UI selections. User-defined configurations are translated into reproducible Nextflow workflows orchestrated on scalable Kubernetes infrastructure.</p>
+            </div>
+            <div class="manual-panel" data-manual-panel>
+                <button class="manual-step" type="button" data-title="Upload Your Data" data-copy="Import genomic files from your computer or Google Drive. CASSIE supports a wide variety of genomic data formats and keeps uploads organized through centralized data management.">Upload Your Data</button>
+                <button class="manual-step" type="button" data-title="Pipeline Configuration" data-copy="Set up analysis with the visual Pipeline Builder, community pipelines, manual tool selection, or smart suggestions. Guided workflow setup reduces manual pipeline construction.">Pipeline Configuration</button>
+                <button class="manual-step" type="button" data-title="Resource & Cost Estimation" data-copy="Estimate runtime and cost based on input size, selected tools, and required compute resources before running the workflow.">Resource & Cost Estimation</button>
+                <button class="manual-step" type="button" data-title="Run with CASSIE" data-copy="Start your workflow and let CASSIE handle orchestration on scalable cloud infrastructure while preserving reproducibility and producing comprehensive results.">Run with CASSIE</button>
             </div>
         </div>
     </section>
 
-    <section>
+    <section class="feature-section">
         <div class="container">
-            <div class="text editable" style="text-align: center; margin-bottom: 48px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            <div class="section-heading section-heading--center">
+                <p class="eyebrow">Workflow Tools</p>
                 <h2 class="centered">Key Features</h2>
-                <p style="margin-bottom: 0;">Powerful tools designed to streamline your genomic research workflow</p>
+                <p style="margin-bottom: 0;">Guided tools for reproducible, cloud-native genomics workflows</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Automated Workflows</h3>
-                    <p>Streamlined processes that automate complex genomic analysis tasks, saving you time and reducing errors.</p>
+                    <h3>Guided Workflow Setup</h3>
+                    <p>Replace manual pipeline construction with guided UI selections, smart suggestions, and reusable pipeline options.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">☁️</div>
-                    <h3>Cloud-Based Infrastructure</h3>
-                    <p>Scalable computing resources accessible from anywhere, eliminating the need for local hardware.</p>
+                    <h3>Nextflow Reproducibility</h3>
+                    <p>User-defined configurations are translated into reproducible Nextflow workflows for consistent analysis runs.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🧬</div>
-                    <h3>Comprehensive Assembly</h3>
-                    <p>Advanced algorithms for accurate genome assembly with industry-leading precision.</p>
+                    <h3>Scalable Cloud Computation</h3>
+                    <p>Workflows run on Kubernetes-backed cloud infrastructure built for compute and memory intensive genomics workloads.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Annotation Tools</h3>
-                    <p>Integrated annotation capabilities for comprehensive genomic analysis and insights.</p>
+                    <h3>Centralized Data Management</h3>
+                    <p>Upload genomic files from your computer or Google Drive and manage workflow inputs and outputs in one place.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔬</div>
-                    <h3>User-Friendly Interface</h3>
-                    <p>Intuitive design that makes complex operations accessible to researchers of all levels.</p>
+                    <h3>Resource & Cost Estimation</h3>
+                    <p>Estimate runtime and cost from input size, selected tools, and compute resource needs before execution.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔗</div>
-                    <h3>Collaborative Environment</h3>
-                    <p>Share and collaborate on genomic projects seamlessly with your team.</p>
+                    <h3>Community Pipelines</h3>
+                    <p>Use shared pipelines and discussions to support reproducibility, reuse, and smoother team collaboration.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section>
+    <section class="split-section split-section--reverse">
         <div class="container">
-            <div class="text editable">
+            <div class="project-snapshot">
+                <button type="button">
+                    <strong>Data</strong>
+                    <span>Centralized upload and management for genomic files from local storage or Google Drive.</span>
+                </button>
+                <button type="button">
+                    <strong>Pipeline</strong>
+                    <span>Visual builder, community pipelines, manual tool selection, and smart suggestions.</span>
+                </button>
+                <button type="button">
+                    <strong>Estimate</strong>
+                    <span>Runtime and cost estimates based on selected tools, input size, and resources.</span>
+                </button>
+                <button type="button">
+                    <strong>Run</strong>
+                    <span>Cloud execution with CASSIE handling workflow orchestration and results.</span>
+                </button>
+            </div>
+            <div class="split-copy">
+                <p class="eyebrow">Project Context</p>
                 <h2>Project Overview</h2>
-                <p>This senior design project brings together a team of talented developers to create a cutting-edge solution for the genomics community. CASSIE addresses the growing need for accessible, efficient, and powerful genome assembly tools in the era of big data genomics.</p>
-                <p>Our platform combines modern web technologies with robust bioinformatics algorithms to deliver a comprehensive solution that serves both researchers and institutions working with genomic data.</p>
+                <p>CASSIE addresses the need for accessible, reproducible, and scalable genomics workflows. It helps users move from uploaded data to configured pipelines, estimated resources, cloud execution, and comprehensive results.</p>
+                <p>The platform combines guided UI selections with reproducible Nextflow workflows orchestrated on Kubernetes, reducing manual setup while preserving workflow clarity and repeatability.</p>
             </div>
         </div>
     </section>
 
-    <section>
+    <section class="closing-section">
         <div class="container">
-            <div class="text editable" style="text-align: center; max-width: 700px; margin: 0 auto;">
+            <div class="closing-panel">
+                <p class="eyebrow">Next Steps</p>
                 <h2 class="centered">Get Started</h2>
                 <p style="margin-bottom: 40px;">Explore our project documentation, meet the team, and learn more about CASSIE.</p>
                 <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
@@ -91,3 +113,32 @@ description: Cloud-based genome assembly and annotation platform that streamline
         </div>
     </section>
 </div>
+
+<script>
+document.querySelectorAll('[data-manual-panel]').forEach(function (panel) {
+	var title = document.getElementById('manual-title');
+	var copy = document.getElementById('manual-copy');
+	var defaultTitle = title.textContent;
+	var defaultCopy = copy.innerHTML;
+
+	panel.querySelectorAll('.manual-step').forEach(function (step) {
+		step.addEventListener('click', function () {
+			var isActive = step.classList.contains('is-active');
+
+			panel.querySelectorAll('.manual-step').forEach(function (item) {
+				item.classList.remove('is-active');
+			});
+
+			if (isActive) {
+				title.textContent = defaultTitle;
+				copy.innerHTML = defaultCopy;
+				return;
+			}
+
+			step.classList.add('is-active');
+			title.textContent = step.dataset.title;
+			copy.textContent = step.dataset.copy;
+		});
+	});
+});
+</script>

@@ -12,7 +12,9 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
-		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicon.png?v=cassie-logo">
+		<link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/favicon.png?v=cassie-logo">
+		<link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png?v=cassie-logo">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 		<script src="{{ site.baseurl }}/js/particles.js" defer></script>
 		<script src="{{ site.baseurl }}/js/dna-helix-3d.js" defer></script>
@@ -30,25 +32,18 @@
 	<body>
 		<header>
 			<div class="container">
-                <div class="company-name"><a href="{{ site.baseurl }}/">{{ site.title }}</a></div>
+                <div class="company-name">
+					<a href="{{ site.baseurl }}/" aria-label="{{ site.title }} home">
+						<img src="{{ site.baseurl }}/images/cassie_logo.png" alt="{{ site.title }} logo">
+						<span>CASSIE</span>
+					</a>
+				</div>
 				{% include navigation.html %}
 			</div>
 		</header>
 		{{ content }}
         <footer>
-            <div class="container footer-container">
-                <nav class="footer-nav">
-                    {% for link in site.data.navigation %}
-                        <a href="{% include relative-src.html src=link.link %}">
-                            {{ link.name }}
-                        </a>
-                    {% endfor %}
-                </nav>
-
-                <p class="copyright">
-                    &copy; {{ site.time | date: '%Y' }} {{ site.title }}
-                </p>
-            </div>
+            <p class="copyright">&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
         </footer>
 		<script>
 			document.getElementById("open-nav").onclick = function () {
