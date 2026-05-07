@@ -1,6 +1,7 @@
-.nav-open nav {
+.nav-open .nav-menu {
 	border-bottom: 1px solid $border-color;
 	padding: 10px 0;
+
 	a {
 		display: block;
 	}
@@ -24,6 +25,10 @@ nav {
 	text-transform: uppercase;
 	font-size: .8em;
 	width: 100%;
+
+	.nav-menu {
+		display: inline;
+	}
 
 	@media #{$mid-point} {
 		text-align: right;
@@ -69,14 +74,42 @@ nav {
 			position: absolute;
 			right: 10px;
 			top: 50%;
-			transform: translateY(-54%);
-			font-size: 1.9em;
+			transform: translateY(-50%);
 			border: 0;
 			color: #fff;
 			height: 42px;
 			line-height: 1;
 			padding: 0;
 			width: 42px;
+
+			span,
+			span::before,
+			span::after {
+				background: currentColor;
+				border-radius: 999px;
+				display: block;
+				height: 3px;
+				width: 18px;
+			}
+
+			span {
+				position: relative;
+			}
+
+			span::before,
+			span::after {
+				content: "";
+				left: 0;
+				position: absolute;
+			}
+
+			span::before {
+				top: -7px;
+			}
+
+			span::after {
+				top: 7px;
+			}
 
 			&::after {
 				display: none;
@@ -127,11 +160,54 @@ nav {
 
 @media (max-width: 619px) {
 	nav {
-		padding-top: 8px;
+		bottom: 0;
+		left: 0;
+		padding: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
 
 		a.nav-toggle {
-			right: 0;
+			right: 24px;
 			top: 50%;
+			z-index: 3;
+		}
+	}
+
+	nav .nav-menu {
+		display: none;
+	}
+
+	.nav-open .nav-menu {
+		background: #5D8194;
+		border: 1px solid rgba(255, 255, 255, 0.14);
+		border-top: 0;
+		border-radius: 0 0 18px 18px;
+		box-shadow: inset 0 14px 18px -12px rgba($darker-bg, 0.68), 0 16px 24px rgba($darker-bg, 0.18);
+		display: block;
+		left: 0;
+		padding: 10px 12px 18px;
+		position: absolute;
+		right: 0;
+		top: 100%;
+		width: auto;
+
+		a:not(.nav-toggle):not(.editor-link) {
+			color: #fff;
+			display: block;
+			font-weight: 700;
+			margin: 5px 0;
+			padding: 12px 14px;
+
+			&::after {
+				display: none;
+			}
+		}
+
+		a:not(.nav-toggle):not(.editor-link):hover,
+		a.active {
+			background: rgba(255, 255, 255, 0.14);
+			color: #fff;
 		}
 	}
 }

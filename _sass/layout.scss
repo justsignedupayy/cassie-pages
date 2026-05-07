@@ -87,11 +87,17 @@ header {
 
 @media (max-width: 619px) {
 	header {
+		min-height: 68px;
 		padding: 14px 0;
+
+		.container {
+			min-height: 40px;
+		}
 
 		.company-name {
 			font-size: 1.15em;
 			min-height: 32px;
+			transform: translateY(2px);
 
 			img {
 				height: 32px;
