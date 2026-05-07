@@ -49,11 +49,6 @@ The site will be available at `http://localhost:4000`
 - **Emre Can Yologlu** - Backend Developer
 - **Osman Baktir** - Frontend Developer
 
-## Links
-
-- [GitHub Repository](https://github.com/EgeSrvn/CASSIE)
-- [Project Website](https://justsignedupayy.github.io/cassie-pages/)
-
 ## License
 
 MIT License

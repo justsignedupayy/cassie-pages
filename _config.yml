@@ -2,13 +2,13 @@
 # Site
 
 title: CASSIE
-url: "https://justsignedupayy.github.io"
+url: ""
 baseurl: "/cassie-pages"
 google_analytics_key: ""
 google_maps_javascript_api_key: ""
 disqus_shortname: ""
 
-# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+# Values for the jekyll-seo-tag gem
 logo: images/cassie_logo.png
 description: Cloud-native genomics workflow platform that turns guided UI selections
   into reproducible Nextflow workflows on scalable Kubernetes infrastructure.
